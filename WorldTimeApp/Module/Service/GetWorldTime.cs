@@ -11,11 +11,11 @@ using WorldTimeApp.Module.Model;
 
 namespace WorldTimeApp.Module.Service
 {
-    public class GetWorldTimeV2
+    public class GetWorldTime
     {
         private readonly IHttpClientFactory _clientFactory;
         private readonly IConfiguration _config;
-        public GetWorldTimeV2(IHttpClientFactory clientFactory, IConfiguration config)
+        public GetWorldTime(IHttpClientFactory clientFactory, IConfiguration config)
         {
             _clientFactory = clientFactory;
             _config = config;

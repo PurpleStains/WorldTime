@@ -24,13 +24,9 @@ namespace WorldTimeApp.Controllers
         public async Task<IActionResult> GetTime()
         {
 
-            GetWorldTimeV2 time = new GetWorldTimeV2(_clientFactory, _config);
+            GetWorldTime time = new GetWorldTime(_clientFactory, _config);
 
             var response = await time.Get();
-
-            //return response;
-
-            //var response = _getWorldTime.Get();
 
             if (response.StatusCode is HttpStatusCode.InternalServerError || response.StatusCode is HttpStatusCode.NotFound)
             {
