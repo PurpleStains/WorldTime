@@ -1,0 +1,27 @@
+<div class="card text-center" style="width: 50vw; margin: auto;">
+    <div class="card-header">
+        <h1>World Time</h1>
+    </div>
+    <div class="card-body">
+        <button *ngIf="!isLoading" type="button" class="btn btn-primary" (click)="get()">Sprawdź godzinę</button>
+        <button *ngIf="isLoading" class="btn btn-primary" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Ładowanie...
+          </button>
+        <div>
+            {{timeModel?.timeUTC?.utc_datetime | date :'full'}}<br>
+        </div>
+        <div *ngIf="timeZoneList">
+            <div *ngFor="let timeZone of timeModel?.timeZoneList">
+                <span> {{timeZone}}</span>
+            </div>
+            
+            <!-- <ul *ngFor="let timeZone of timeModel?.timeZoneList">
+                <li>{{timeZone}}</li>
+            </ul> -->
+        </div>
+    </div>
+    <div class="card-footer">
+        Seweryn Sergjeiusz
+    </div>
+</div>
